@@ -15,7 +15,7 @@
 #				for each node.
 
 # Variables
-INPUT='n'
+INPUT_CORRECT='n'
 
 
 echo '+--------------------------------------+'
@@ -53,7 +53,7 @@ read -sp 'enter a password: ' pass1
 echo
 read -sp 're-enter password: ' pass2
 echo
-echo
+echo 
 
 	if [ $pass1 != $pass2 ]
 	then
@@ -70,7 +70,7 @@ echo Node Alias	: $NODE_ALIAS
 echo
 echo 'Is this correct? (y/n):'
 echo
-read 
+read INPUT_CORRECT 
 
 	#if [ $yn = 'y' ]
 	#then
