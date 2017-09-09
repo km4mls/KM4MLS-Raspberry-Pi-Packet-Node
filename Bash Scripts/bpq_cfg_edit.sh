@@ -42,11 +42,13 @@ function get_user_pass {
 echo 'Enter a password for the Sysop:'
 echo
 read -sp 'enter a password: ' pass1
+echo
 read -sp 're-enter password: ' pass2
+echo
 
 if [ $pass1 != $pass2 ]
 then
-#echo
+echo
 echo 'Password does not match!'
 get_user_pass
 fi
