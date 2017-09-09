@@ -36,8 +36,8 @@ echo
 
 function get_user_info {
 
-header
 # Get users callsign
+header
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
 read USER_CALL
@@ -45,41 +45,50 @@ read USER_CALL
 USER_CALL="${USER_CALL^^}"
 echo
 
-
-header
 # Get user's gridsquare
+header
 echo 'Enter your gridsquare locator (this is for the node map):'
 echo '(ex: EM82dk)'
 read GRID_SQUARE
 echo
 
-
 header
+# Get user's city
+echo 'Enter the city/town the node will be located:'
+echo '(ex: Perry)'
+read CITY
+echo
+
+# Get user's state
+echo 'Enter the abreviation for the state the node will be located:'
+echo '(ex: GA)'
+read STATE
+echo
+
+
 # Get user's desired node alias
+header
 echo 'Enter an alias call for your node (up to 6 chars):'
 echo '(ex: MLSPAC)'
 read NODE_ALIAS
 echo
 
-
-header
 # Get user's desired BBS node alias
+header
 echo 'Enter an alias call for your BBS/Maildrop node (up to 6 chars):'
 echo '(ex: MLSBBS)'
 read BBS_ALIAS
 echo
 
-
-header
 # Get user's desired Chat node alias
+header
 echo 'Enter an alias call for your Chat node (up to 6 chars):'
 echo '(ex: MLSCHT)'
 read CHT_ALIAS
 echo
 
-
-header
 # Get user's desired RMS node alias
+header
 echo 'Enter an alias call for your Winlink RMS node (up to 6 chars):'
 echo '(ex: MLSRMS)'
 read RMS_ALIAS
