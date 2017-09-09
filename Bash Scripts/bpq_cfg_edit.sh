@@ -29,11 +29,13 @@ echo
 echo 'Enter a Node Alias "nickname" (up to 6 chars):'
 echo '(ex: MLSPAC)'
 read NODE_ALIAS
+echo
 
 # Get user's gridsquare
 echo 'Enter your gridsquare locator (this is for the node map):'
 echo '(ex: EM82dk)'
 read GRID_SQUARE
+echo
 } # END get_user_info
 
 
