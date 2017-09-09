@@ -26,6 +26,7 @@
 INPUT_CORRECT='n'
 ERROR_TEXT='\033[0;31m'
 DEFAULT_TEXT='\033[0m'
+PASS_INVALID='0'
 
 function header {
 echo '+--------------------------------------+'
@@ -92,7 +93,7 @@ function get_user_pass {
 # Get user's desired password for BPQ
 clear
 header
-	if [ $PASS_INVALID=1 ]
+	if [ $PASS_INVALID=='1' ]
 	then
 		echo "${ERROR_TEXT} password did not match ${DEFAULT_TEXT}"
 	fi
@@ -109,10 +110,10 @@ echo
 	echo
 	echo 
 	echo 'Password does not match!'
-	PASS_INVALID=1
+	PASS_INVALID='1'
 	get_user_pass
 	fi
-PASS_INVALID=0
+PASS_INVALID='0'
 } #END get_user_pass
 
 function read_back {
