@@ -102,13 +102,19 @@ echo
 echo 'Is this correct? (y/n):'
 echo
 read INPUT_CORRECT 
-
+	if [ INPUT_CORRECT = 'n' ]
+	then
+	main
+	fi
 
 }
 
+function main {
 get_user_info
 get_user_pass
 read_back
+}
 
+main
 
 
