@@ -13,6 +13,11 @@
 #		 		relevent information related to the config of BPQ, then 
 #				replaces the parts of the BPQ32.cfg that must be unique
 #				for each node.
+
+# Variables
+INPUT='n'
+
+
 echo '+--------------------------------------+'
 echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
 echo '+--------------------------------------+'
@@ -23,8 +28,8 @@ function get_user_info {
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
 read USER_CALL
-echo  
-
+USER_CALL = ${USER_CALL^^}
+echo $USER_CALL
 # Get user's desired node alias
 echo 'Enter a Node Alias "nickname" (up to 6 chars):'
 echo '(ex: MLSPAC)'
@@ -47,13 +52,14 @@ read -sp 'enter a password: ' pass1
 echo
 read -sp 're-enter password: ' pass2
 echo
-
-if [ $pass1 != $pass2 ]
-then
 echo
-echo 'Password does not match!'
-get_user_pass
-fi
+
+	if [ $pass1 != $pass2 ]
+	then
+	echo
+	echo 'Password does not match!'
+	get_user_pass
+	fi
 
 } #END get_user_pass
 
@@ -63,7 +69,12 @@ echo Node Alias	: $NODE_ALIAS
 echo
 echo 'Is this correct? (y/n):'
 echo
-read yn
+read 
+
+	if [ $yn = 'y' ]
+	then
+	
+	fi
 }
 
 get_user_info
