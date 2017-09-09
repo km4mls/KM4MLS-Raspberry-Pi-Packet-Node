@@ -25,13 +25,16 @@
 # Variables
 INPUT_CORRECT='n'
 
-
+function header{
 echo '+--------------------------------------+'
 echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
 echo '+--------------------------------------+'
 echo
+}
 
 function get_user_info {
+clear 
+header
 # Get users callsign
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
@@ -40,30 +43,40 @@ read USER_CALL
 USER_CALL="${USER_CALL^^}"
 echo
 
+clear
+header
 # Get user's gridsquare
 echo 'Enter your gridsquare locator (this is for the node map):'
 echo '(ex: EM82dk)'
 read GRID_SQUARE
 echo
 
+clear
+header
 # Get user's desired node alias
 echo 'Enter an alias call for your node (up to 6 chars):'
 echo '(ex: MLSPAC)'
 read NODE_ALIAS
 echo
 
+clear
+header
 # Get user's desired BBS node alias
 echo 'Enter an alias call for your BBS/Maildrop node (up to 6 chars):'
 echo '(ex: MLSBBS)'
 read BBS_ALIAS
 echo
 
+clear
+header
 # Get user's desired Chat node alias
 echo 'Enter an alias call for your Chat node (up to 6 chars):'
 echo '(ex: MLSCHT)'
 read CHT_ALIAS
 echo
 
+clear
+header
 # Get user's desired RMS node alias
 echo 'Enter an alias call for your Winlink RMS node (up to 6 chars):'
 echo '(ex: MLSRMS)'
@@ -75,6 +88,8 @@ echo
 
 function get_user_pass {
 # Get user's desired password for BPQ
+clear
+header
 echo 'Enter a password for the Sysop:'
 echo
 echo 'Enter password:'
@@ -96,6 +111,8 @@ echo
 } #END get_user_pass
 
 function read_back {
+clear
+header
 echo Callsign	: $USER_CALL
 echo Node Alias	: $NODE_ALIAS
 echo
