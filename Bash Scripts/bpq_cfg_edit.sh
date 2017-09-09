@@ -24,12 +24,13 @@
 
 # Variables
 PASS_INVALID='0'
+RESPONSE_INVALID='0'
 
 function header {
 clear
-echo '+--------------------------------------+'
-echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
-echo '+--------------------------------------+'
+echo '+----------------------------------------------+'
+echo '|        KM4MLS BPQ32.cfg Set-Up Script        |'
+echo '+----------------------------------------------+'
 echo
 }
 
@@ -121,10 +122,16 @@ header
 #echo Callsign	: $USER_CALL
 #echo Node Alias	: $NODE_ALIAS
 
+
 echo
-echo 'Is this correct? (y/n):'
+echo "Is this correct? (y/n):"
 echo
+	if [ $RESPONSE_INVALID == '1' ]
+	then
+		echo "Please enter a valid response"
+	fi
 read INPUT_CORRECT 
+
 
 # Convert input to all lowercase
 INPUT_CORRECT="${INPUT_CORRECT,,}"
@@ -139,23 +146,20 @@ INPUT_CORRECT="${INPUT_CORRECT,,}"
 		main
 		
 	else
+		RESPONSE_INVALID='1'
 		read_back
 		
 	fi
-
+RESPONSE_INVALID='0'
 }
 
-function ddd {
-header
-echo 'OK!'
-}
 
 function main {
 #read_back
 get_user_info
 get_user_pass
 read_back
-ddd
+
 
 }
 
