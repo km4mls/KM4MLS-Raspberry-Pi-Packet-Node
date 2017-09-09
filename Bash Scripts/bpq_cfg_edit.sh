@@ -27,10 +27,11 @@ function get_user_info {
 # Get users callsign
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
-read USER_CALL_IN
-USER_CALL_IN="${USER_CALL_IN^^}"
+read USER_CALL
 
-echo $USER_CALL_IN
+# Convert to all uppercase 
+USER_CALL="${USER_CALL^^}"
+
 
 
 #
