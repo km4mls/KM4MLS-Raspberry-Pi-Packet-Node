@@ -109,7 +109,7 @@ INPUT_CORRECT="${INPUT_CORRECT,,}"
 	then
 		echo 'Invalid option'
 		echo
-		readback
+		read_back
 	fi
 		# If we have a valid response check yes or no
 		if [ INPUT_CORRECT!='y' ]
