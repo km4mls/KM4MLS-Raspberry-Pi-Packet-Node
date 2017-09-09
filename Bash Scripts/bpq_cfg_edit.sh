@@ -92,9 +92,10 @@ function get_user_pass {
 # Get user's desired password for BPQ
 clear
 header
-	if [ PASS_INVALID == 1 ]
+	if [ $PASS_INVALID == 1 ]
 	then
 		echo "${ERROR_TEXT} password did not match ${DEFAULT_TEXT}"
+	fi
 echo 'Enter a password for the Sysop:'
 read -s pass1
 echo
@@ -108,9 +109,10 @@ echo
 	echo
 	echo 
 	echo 'Password does not match!'
+	PASS_INVALID=1
 	get_user_pass
 	fi
-
+PASS_INVALID=0
 } #END get_user_pass
 
 function read_back {
