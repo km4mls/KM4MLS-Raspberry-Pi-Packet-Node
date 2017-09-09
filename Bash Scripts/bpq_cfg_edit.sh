@@ -30,6 +30,7 @@ echo '(ex: KM4MLS)'
 read USER_CALL
 USER_CALL = ${USER_CALL^^}
 echo $USER_CALL
+
 # Get user's desired node alias
 echo 'Enter a Node Alias "nickname" (up to 6 chars):'
 echo '(ex: MLSPAC)'
@@ -71,10 +72,10 @@ echo 'Is this correct? (y/n):'
 echo
 read 
 
-	if [ $yn = 'y' ]
-	then
+	#if [ $yn = 'y' ]
+	#then
 	
-	fi
+	#fi
 }
 
 get_user_info
