@@ -25,7 +25,7 @@
 # Variables
 INPUT_CORRECT='n'
 
-function header{
+function header {
 echo '+--------------------------------------+'
 echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
 echo '+--------------------------------------+'
@@ -122,7 +122,7 @@ read INPUT_CORRECT
 # Convert input to all lowercase
 INPUT_CORRECT="${INPUT_CORRECT,,}"
 	# Check for a valid response
-	if [ INPUT_CORRECT!='y' ] && [ INPUT_CORRECT!='y' ]
+	if [ INPUT_CORRECT!='y' ] && [ INPUT_CORRECT!='n' ]
 	then
 		echo 'Invalid option'
 		echo
