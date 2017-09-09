@@ -13,15 +13,26 @@
 #		 		relevent information related to the config of BPQ, then 
 #				replaces the parts of the BPQ32.cfg that must be unique
 #				for each node.
+echo '+--------------------------------------+'
+echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
+echo '+--------------------------------------+'
+echo
+echo 'Enter your callsign:'
+echo '(ex: KM4MLS)'
 
-echo Enter your callsign:
-
-read USER_CALL
+read -p USER_CALL
 
 echo  
 
-echo Enter a Node Alias (up to 6 chars):
+echo 'Enter a Node Alias (up to 6 chars):'
+echo '(ex: MLSPAC)'
 
 read NODE_ALIAS
 
-echo $USER_CALL $NODE_ALIAS
+echo Callsign	: $USER_CALL
+echo Node Alias	: $NODE_ALIAS
+echo
+echo 'Is this correct? (y/n):'
+echo
+read yn
+
