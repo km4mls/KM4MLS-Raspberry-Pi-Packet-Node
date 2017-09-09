@@ -36,18 +36,8 @@ function get_user_info {
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
 read USER_CALL
-
 # Convert to all uppercase 
 USER_CALL="${USER_CALL^^}"
-
-
-
-#
-#
-# Get user's desired node alias
-echo 'Enter a Node Alias "nickname" (up to 6 chars):'
-echo '(ex: MLSPAC)'
-read NODE_ALIAS
 echo
 
 # Get user's gridsquare
@@ -55,22 +45,50 @@ echo 'Enter your gridsquare locator (this is for the node map):'
 echo '(ex: EM82dk)'
 read GRID_SQUARE
 echo
-} # END get_user_info
+
+# Get user's desired node alias
+echo 'Enter an alias call for your node (up to 6 chars):'
+echo '(ex: MLSPAC)'
+read NODE_ALIAS
+echo
+
+# Get user's desired BBS node alias
+echo 'Enter an alias call for your BBS/Maildrop node (up to 6 chars):'
+echo '(ex: MLSBBS)'
+read BBS_ALIAS
+echo
+
+# Get user's desired Chat node alias
+echo 'Enter an alias call for your Chat node (up to 6 chars):'
+echo '(ex: MLSCHT)'
+read CHT_ALIAS
+echo
+
+# Get user's desired RMS node alias
+echo 'Enter an alias call for your Winlink RMS node (up to 6 chars):'
+echo '(ex: MLSRMS)'
+read RMS_ALIAS
+echo
+
+} #### END get_user_info
 
 
 function get_user_pass {
 # Get user's desired password for BPQ
 echo 'Enter a password for the Sysop:'
 echo
-read -sp 'enter a password: ' pass1
+echo 'Enter password:'
+read -s pass1
 echo
-read -sp 're-enter password: ' pass2
+echo 'Re-Enter password:'
+read -s pass2
 echo
 echo 
 
 	if [ $pass1 != $pass2 ]
 	then
 	echo
+	echo 
 	echo 'Password does not match!'
 	get_user_pass
 	fi
