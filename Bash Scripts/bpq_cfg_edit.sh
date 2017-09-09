@@ -29,8 +29,8 @@ echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
 read USER_CALL_IN
 USER_CALL="${USER_CALL^^}"
-echo $USER_CALL_IN
-echo $USER_CALL
+echo "input $USER_CALL_IN"
+echo "upper $USER_CALL"
 # Get user's desired node alias
 echo 'Enter a Node Alias "nickname" (up to 6 chars):'
 echo '(ex: MLSPAC)'
