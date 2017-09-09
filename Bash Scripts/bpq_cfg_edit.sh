@@ -28,7 +28,7 @@ function get_user_info {
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
 read USER_CALL
-USER_CALL="${USER_CALL^^}"
+echo "${USER_CALL^^}"
 echo $USER_CALL
 
 # Get user's desired node alias
