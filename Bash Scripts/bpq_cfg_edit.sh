@@ -44,11 +44,11 @@ echo
 read -sp 'enter a password: ' pass1
 read -sp 're-enter password: ' pass2
 
-	if [pass1 != pass2]
-	echo 
-	echo 'Password does not match!'
-	get_user_pass
-	fi
+if [pass1 != pass2]
+echo 
+echo 'Password does not match!'
+get_user_pass
+fi
 
 } #END get_user_pass
 
