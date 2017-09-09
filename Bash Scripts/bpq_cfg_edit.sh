@@ -23,10 +23,10 @@
 
 
 # Variables
-INPUT_CORRECT='n'
 PASS_INVALID='0'
 
 function header {
+clear
 echo '+--------------------------------------+'
 echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
 echo '+--------------------------------------+'
@@ -34,7 +34,7 @@ echo
 }
 
 function get_user_info {
-clear 
+
 header
 # Get users callsign
 echo 'Enter your callsign:'
@@ -44,7 +44,7 @@ read USER_CALL
 USER_CALL="${USER_CALL^^}"
 echo
 
-clear
+
 header
 # Get user's gridsquare
 echo 'Enter your gridsquare locator (this is for the node map):'
@@ -52,7 +52,7 @@ echo '(ex: EM82dk)'
 read GRID_SQUARE
 echo
 
-clear
+
 header
 # Get user's desired node alias
 echo 'Enter an alias call for your node (up to 6 chars):'
@@ -60,7 +60,7 @@ echo '(ex: MLSPAC)'
 read NODE_ALIAS
 echo
 
-clear
+
 header
 # Get user's desired BBS node alias
 echo 'Enter an alias call for your BBS/Maildrop node (up to 6 chars):'
@@ -68,7 +68,7 @@ echo '(ex: MLSBBS)'
 read BBS_ALIAS
 echo
 
-clear
+
 header
 # Get user's desired Chat node alias
 echo 'Enter an alias call for your Chat node (up to 6 chars):'
@@ -76,7 +76,7 @@ echo '(ex: MLSCHT)'
 read CHT_ALIAS
 echo
 
-clear
+
 header
 # Get user's desired RMS node alias
 echo 'Enter an alias call for your Winlink RMS node (up to 6 chars):'
@@ -89,7 +89,7 @@ echo
 
 function get_user_pass {
 # Get user's desired password for BPQ
-clear
+
 header
 	if [ $PASS_INVALID == '1' ]
 	then
@@ -115,35 +115,48 @@ PASS_INVALID='0'
 } #END get_user_pass
 
 function read_back {
-clear
+
 header
-echo Callsign	: $USER_CALL
-echo Node Alias	: $NODE_ALIAS
+
+#echo Callsign	: $USER_CALL
+#echo Node Alias	: $NODE_ALIAS
+
 echo
 echo 'Is this correct? (y/n):'
 echo
 read INPUT_CORRECT 
+
 # Convert input to all lowercase
 INPUT_CORRECT="${INPUT_CORRECT,,}"
-	# Check for a valid response
-	if [ INPUT_CORRECT!='y' ] && [ INPUT_CORRECT!='n' ]
+#	Check for a valid response
+	# If yes ontinue
+	if [ $INPUT_CORRECT == 'y' ] || [ $INPUT_CORRECT == 'yes' ]
 	then
-		echo 'Invalid option'
-		echo
+		break 
+		
+	elif [ $INPUT_CORRECT == 'n' ] || [ $INPUT_CORRECT == 'no' ]
+	then
+		main
+		
+	else
 		read_back
+		
 	fi
-		# If we have a valid response check yes or no
-		if [ INPUT_CORRECT!='y' ]
-		then
-			main
-		fi
 
 }
 
+function ddd {
+header
+echo 'OK!'
+}
+
 function main {
+#read_back
 get_user_info
 get_user_pass
 read_back
+ddd
+
 }
 
 
