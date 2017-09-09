@@ -72,10 +72,7 @@ echo 'Is this correct? (y/n):'
 echo
 read INPUT_CORRECT 
 
-	#if [ $yn = 'y' ]
-	#then
-	
-	#fi
+
 }
 
 get_user_info
