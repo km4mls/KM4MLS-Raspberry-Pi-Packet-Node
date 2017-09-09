@@ -17,22 +17,53 @@ echo '+--------------------------------------+'
 echo '|    KM4MLS BPQ32.cfg Set-Up Script    |'
 echo '+--------------------------------------+'
 echo
+
+function get_user_info {
+# Get users callsign
 echo 'Enter your callsign:'
 echo '(ex: KM4MLS)'
-
-read -p USER_CALL
-
+read USER_CALL
 echo  
 
-echo 'Enter a Node Alias (up to 6 chars):'
+# Get user's desired node alias
+echo 'Enter a Node Alias "nickname" (up to 6 chars):'
 echo '(ex: MLSPAC)'
-
 read NODE_ALIAS
 
+# Get user's gridsquare
+echo 'Enter your gridsquare locator (this is for the node map):'
+echo '(ex: EM82dk)'
+read GRID_SQUARE
+} # END get_user_info
+
+
+function get_user_pass {
+# Get user's desired password for BPQ
+echo 'Enter a password for the Sysop:'
+echo
+read -sp 'enter a password: ' pass1
+read -sp 're-enter password: ' pass2
+
+	if [pass1 != pass2]
+	echo 
+	echo 'Password does not match!'
+	get_user_pass
+	fi
+
+} #END get_user_pass
+
+function read_back {
 echo Callsign	: $USER_CALL
 echo Node Alias	: $NODE_ALIAS
 echo
 echo 'Is this correct? (y/n):'
 echo
 read yn
+}
+
+get_user_info
+get_user_pass
+read_back
+
+
 
