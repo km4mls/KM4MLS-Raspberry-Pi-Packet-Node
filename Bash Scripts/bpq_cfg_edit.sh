@@ -94,7 +94,7 @@ clear
 header
 	if [ PASS_INVALID == 1 ]
 	then
-		echo "${ERROR_TEXT}password did not match${DEFAULT_TEXT}\n"
+		echo "${ERROR_TEXT} password did not match ${DEFAULT_TEXT}"
 echo 'Enter a password for the Sysop:'
 read -s pass1
 echo
