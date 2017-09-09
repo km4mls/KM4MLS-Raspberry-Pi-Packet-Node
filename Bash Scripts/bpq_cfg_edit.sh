@@ -104,10 +104,18 @@ echo
 read INPUT_CORRECT 
 # Convert input to all lowercase
 INPUT_CORRECT="${INPUT_CORRECT,,}"
-	if [ INPUT_CORRECT!='y' ]
+	# Check for a valid response
+	if [ INPUT_CORRECT!='y' ] && [ INPUT_CORRECT!='y' ]
 	then
-	main
+		echo 'Invalid option'
+		echo
+		readback
 	fi
+		# If we have a valid response check yes or no
+		if [ INPUT_CORRECT!='y' ]
+		then
+			main
+		fi
 
 }
 
