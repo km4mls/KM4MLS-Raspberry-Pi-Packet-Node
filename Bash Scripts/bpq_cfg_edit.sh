@@ -24,8 +24,6 @@
 
 # Variables
 INPUT_CORRECT='n'
-ERROR_TEXT='\033[0;31m'
-DEFAULT_TEXT='\033[0m'
 PASS_INVALID='0'
 
 function header {
@@ -93,9 +91,9 @@ function get_user_pass {
 # Get user's desired password for BPQ
 clear
 header
-	if [ $PASS_INVALID=='1' ]
+	if [ $PASS_INVALID == '1' ]
 	then
-		echo "${ERROR_TEXT} password did not match ${DEFAULT_TEXT}"
+		echo "password did not match"
 	fi
 echo 'Enter a password for the Sysop:'
 read -s pass1
