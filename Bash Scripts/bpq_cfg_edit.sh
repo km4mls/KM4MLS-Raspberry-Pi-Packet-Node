@@ -92,7 +92,7 @@ function get_user_pass {
 # Get user's desired password for BPQ
 clear
 header
-	if [ $PASS_INVALID == 1 ]
+	if [ $PASS_INVALID==1 ]
 	then
 		echo "${ERROR_TEXT} password did not match ${DEFAULT_TEXT}"
 	fi
