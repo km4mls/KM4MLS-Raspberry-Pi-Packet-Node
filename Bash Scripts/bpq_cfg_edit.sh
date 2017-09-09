@@ -46,8 +46,8 @@ read -sp 're-enter password: ' pass2
 
 if [ $pass1 != $pass2 ]
 then
-echo
-echo 'Password does not match!'
+#echo
+#echo 'Password does not match!'
 get_user_pass
 fi
 
