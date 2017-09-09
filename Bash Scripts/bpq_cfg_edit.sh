@@ -102,7 +102,9 @@ echo
 echo 'Is this correct? (y/n):'
 echo
 read INPUT_CORRECT 
-	if [ INPUT_CORRECT = 'n' ]
+# Convert input to all lowercase
+INPUT_CORRECT="${INPUT_CORRECT,,}"
+	if [ INPUT_CORRECT!='y' ]
 	then
 	main
 	fi
