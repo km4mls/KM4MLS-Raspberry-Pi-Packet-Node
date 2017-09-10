@@ -23,7 +23,7 @@
 
 # Defines
 LINBPQDIR="/home/${USER}/linbpq/" 
-BPQCFG="BPQ32.cfg"
+BPQCFG="bpq32.cfg"
 
 # Variables
 PASS_INVALID='0'
