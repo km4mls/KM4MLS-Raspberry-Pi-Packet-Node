@@ -362,7 +362,7 @@ cd ~
 #                                                                     #
 #######################################################################
 function  edit_cfg {
-echo "Adding ${USER_CALL}"
+echo "Editing ${BPQCFG} ..."
 # Now we have a copy of BPQ32.cfg let's make the modifications
 
 
@@ -410,6 +410,9 @@ run_sed
 # SETUP-STATE
 
 #sed -i "s/${SEARCH}/${REPLACE}/g" $LINBPQDIR$BPQCFG
+sleep 3
+echo "Done!"
+sleep 1
 }
 #### END edit_cfg FUNCTION
 
