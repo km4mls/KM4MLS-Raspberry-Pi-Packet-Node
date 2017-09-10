@@ -365,7 +365,7 @@ function  edit_cfg {
 echo "Adding ${USER_CALL}"
 # Now we have a copy of BPQ32.cfg let's make the modifications
 
-BPQCFG="TEST.cfg"
+
 # First  replace all copies of NOCALL with the user's callsign
 
 SEARCH="SETUP-NOCALL"
