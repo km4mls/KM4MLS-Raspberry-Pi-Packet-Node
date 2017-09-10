@@ -5,14 +5,14 @@
 # Revision : 0.1 ALPHA
 # Modified :
 #
-# Description:  This script modifies the BPQ32.cfg starter file supplied
+# Description:  This script modifies the bpq32.cfg starter file supplied
 #               in the KM4MLS-Raspberry-Pi-Packet-Node github repository.
 #               It is designed to make getting LINBPQ (BPQ32) set-up
 #               reletively easy and strait-forward.
 #
 #               The script asks the user for his/her callsign and other
 #               relevent information related to the config of BPQ, then 
-#               replaces the parts of the BPQ32.cfg that must be unique
+#               replaces the parts of the bpq32.cfg that must be unique
 #               for each node.
 #
 # Notes:        This script is currently in the alpha stage. It does not
@@ -41,7 +41,7 @@ FREQUENCY_INVALID='0'
 function header {
 clear
 echo '+------------------------------------------------------------+'
-echo '|             BPQ32.cfg Set-Up Script by KM4MLS              |'
+echo '|             bpq32.cfg Set-Up Script by KM4MLS              |'
 echo '+------------------------------------------------------------+'
 echo 
 echo '          Press [CTRL] + C  at any time to quit'
@@ -128,7 +128,7 @@ echo
 #  Function    : get_user_info                                        #
 #                                                                     #
 #  Description : Gathers all the user information needed to configure #
-#                the BPQ32.cfg file for a simple station with a BBS,  #
+#                the bpq32.cfg file for a simple station with a BBS,  #
 #                Chat, and RMS node.                                  #
 #                                                                     #
 #######################################################################
@@ -305,7 +305,7 @@ RESPONSE_INVALID='0'
 #######################################################################
 #  Function    : get_cfg_file                                         #
 #                                                                     #
-#  Description : Looks for BPQ32.cfg and makes a backup if found,     #
+#  Description : Looks for bpq32.cfg and makes a backup if found,     #
 #                then downloads a fresh copy of the starter file      #
 #                from the github repository.                          #
 #                                                                     #
@@ -316,27 +316,27 @@ header
 # Move to the linbpq directory
 cd $LINBPQDIR 
 
-echo 'Looking for an existing copy of BPQ32.cfg...'
+echo 'Looking for an existing copy of bpq32.cfg...'
 sleep 1
-# Check if BPQ32.cfg already exists. If so back it up.
+# Check if bpq32.cfg already exists. If so back it up.
 if [ -e $LINBPQDIR$BPQCFG ]
 then
-	echo "Backing up existing BPQ32.cfg file to BPQ32.cfg.bak..."
+	echo "Backing up existing bpq32.cfg file to bpq32.cfg.bak..."
 	cp -f $BPQCFG $BPQCFG.bak
 	sleep 2
 else
 # If not, go ahead and download a copy
-	echo "No existing BPQ32.cfg file found..."
+	echo "No existing bpq32.cfg file found..."
 	sleep 2
 fi
 
-# Download BPQ32.cfg from github
-echo "Downloading BPQ32.cfg from github, please wait..."
+# Download bpq32.cfg from github
+echo "Downloading bpq32.cfg from github, please wait..."
 sleep 2
-sudo wget https://github.com/km4mls/KM4MLS-Raspberry-Pi-Packet-Node/raw/master/config/BPQ32.cfg
+sudo wget https://github.com/km4mls/KM4MLS-Raspberry-Pi-Packet-Node/raw/master/config/bpq32.cfg
 	if [ $? != 0 ]
 	then
-		echo 'BPQ32.cfg download failed, exiting set-up'
+		echo 'bpq32.cfg download failed, exiting set-up'
 		cd ~
 		sleep 4
 		exit	
@@ -356,14 +356,14 @@ cd ~
 #######################################################################
 #  Function    : edit_cfg                                             #
 #                                                                     #
-#  Description : Edits the new copy of the BPQ32.cfg file with the    #
+#  Description : Edits the new copy of the bpq32.cfg file with the    #
 #                user supplied details collected in get_user_info     #
 #                                                                     #
 #                                                                     #
 #######################################################################
 function  edit_cfg {
 echo "Editing ${BPQCFG} ..."
-# Now we have a copy of BPQ32.cfg let's make the modifications
+# Now we have a copy of bpq32.cfg let's make the modifications
 
 
 # First  replace all copies of NOCALL with the user's callsign
