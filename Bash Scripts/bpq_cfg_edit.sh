@@ -447,7 +447,7 @@ sudo apt-get install bc
 #                                                                     #
 #######################################################################
 function loop {
-#get_dependencies
+get_dependencies
 get_user_info
 get_user_pass
 confirm_info
