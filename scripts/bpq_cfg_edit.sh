@@ -435,7 +435,7 @@ sed -i "s/${SEARCH}/${REPLACE}/g" $LINBPQDIR$BPQCFG
 
 
 function get_dependencies {
-sudo apt-get install -y bc
+sudo apt-get install bc
 }
 
 
