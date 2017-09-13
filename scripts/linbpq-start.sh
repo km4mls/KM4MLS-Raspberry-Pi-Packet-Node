@@ -1,13 +1,24 @@
 #!/bin/bash
 
-# Location of the linbpq binary.  Depends on $PATH as shown.
-# change this if you want to use some other specific location.
-# e.g.  LINBPQ="/usr/local/bin/linbpq"
+##   File Name: linbpq-start.sh
+##   
+##   Description: This is a auto-start script designed to
+##   run linbpq on boot and relaunch it should it fail
+##   or be closed.  This script is designed to be used with
+##   crontab.
+##   
+##   To use with crontab, save ths script in your home dir
+##   then launch crontab with:
+##   crontab -e
+##   Then enter the following on a new line:
+##   * * * * * /bin/bash /home/<username>/linbpq-start.sh
 
 # User login name ATTENTION: this is case sensitive!!!
 USERNAME="ENTER_YOUR_USERNAME_HERE"
 
-# Path to the linbpq directory
+# Location of the linbpq binary.  Depends on $PATH as shown.
+# change this if you want to use some other specific location.
+# e.g.  LINBPQ="/usr/local/bin/linbpq"
 LINBPQPATH="/home/${USERNAME}/linbpq"
 
 # Name of linbpq binary
