@@ -4,7 +4,8 @@
 # change this if you want to use some other specific location.
 # e.g.  LINBPQ="/usr/local/bin/linbpq"
 
-USERNAME="km4mls"
+# User login name ATTENTION: this is case sensitive!!!
+USERNAME="ENTER_YOUR_USERNAME_HERE"
 
 # Path to the linbpq directory
 LINBPQPATH="/home/${USERNAME}/linbpq"
@@ -18,8 +19,6 @@ LINBPQ_BIN="linbpq"
 
 # When running from cron, we have a very minimal environment
 # including PATH=$LINBPQPATH
-
-echo "Enter linbpq start-up script"
 
 export PATH=$LINBPQPATH:$PATH
 
@@ -38,12 +37,12 @@ pgrep $LINBPQ_BIN
 # pgrep returns 0 to $? if app is running 1 if not
 if [ $? -eq 0 ] 
 then
-  #echo "LINBPQ already running, exiting script"
+  echo "LINBPQ already running, exiting script"
   exit
 fi
   
 # Not running, start it up
-#echo "LINBPQ starting up..."
+echo "Starting LINBPQ..."
 
 # Must run linbpq from the directory it's in, so switch to it
 cd $LINBPQPATH
