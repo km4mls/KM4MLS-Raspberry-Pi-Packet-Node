@@ -333,7 +333,7 @@ fi
 # Download bpq32.cfg from github
 echo "Downloading bpq32.cfg from github, please wait..."
 sleep 2
-sudo wget https://github.com/km4mls/KM4MLS-Raspberry-Pi-Packet-Node/raw/master/config/bpq32.cfg
+sudo wget https://github.com/km4mls/KM4MLS-Raspberry-Pi-Packet-Node/raw/master/config-files/bpq32.cfg
 	if [ $? != 0 ]
 	then
 		echo 'bpq32.cfg download failed, exiting set-up'
